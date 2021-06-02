@@ -8,30 +8,28 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/convert-style-name"),
-
-    RuleTester = require("eslint").RuleTester;
-
+var rule = require("../../../lib/rules/ban-style-name"),
+  RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
-ruleTester.run("convert-style-name", rule, {
+ruleTester.run("ban-style-name", rule, {
+  valid: [
+    // give me some code that won't trigger a warning
+  ],
 
-    valid: [
-
-        // give me some code that won't trigger a warning
-    ],
-
-    invalid: [
+  invalid: [
+    {
+      code: "no style name",
+      errors: [
         {
-            code: "no style name",
-            errors: [{
-                message: "Fill me in.",
-                type: "Me too"
-            }]
-        }
-    ]
+          message: "Fill me in.",
+          type: "Me too",
+        },
+      ],
+    },
+  ],
 });
