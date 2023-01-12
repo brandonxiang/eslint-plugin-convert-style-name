@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-convention",
+  "name": "eslint-plugin-convert-style-name",
   "version": "0.0.0",
   "description": "convert style name to class name",
   "keywords": [
